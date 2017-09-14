@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.9.9)  14 SEP 2017 08:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.9.9)  14 SEP 2017 12:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,10 +490,10 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
  [2 <./results1.png>]
 [3] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1861 strings out of 492990
- 24452 string characters out of 6136335
- 82626 words of memory out of 5000000
- 5402 multiletter control sequences out of 15000+600000
+ 1862 strings out of 492990
+ 24467 string characters out of 6136335
+ 82634 words of memory out of 5000000
+ 5403 multiletter control sequences out of 15000+600000
  8849 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,7n,25p,275b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -504,7 +504,7 @@ ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (3 pages, 102876 bytes).
+Output written on report.pdf (3 pages, 103502 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream

@@ -3,7 +3,7 @@
 -export([start/1, start/2, stop/0, fib/1, request/1]).
 
 start(Port) ->
-    start(Port, 1).
+    start(Port, 4).
 
 start(Port, N) ->
     register(rudy4, spawn(fun() -> init(Port, N) end)).
@@ -33,7 +33,7 @@ handlers(Listen, N) ->
 	    ok;
 	N ->
 	    spawn(fun() -> handler(Listen, N) end),
-	    handlers(Listen, N-1)
+        handlers(Listen, N-1)
     end.
 
 

@@ -80,10 +80,23 @@ Contrary to this, running the server with an artificial delay between request el
 
 \subsection{Multiprocessor tests}
 Several test were made on clientLocal (4 logical cores) using the files created in the assignment without modifications and the provided \textit{rudy4.erl} \& \textit{test2.erl}.
-Several combinations running an erlang shell with 1,2 \& 4 cores support were done. This is achieved by executing the shell with \textit{-smp enabled -S N} where \textit{N} is the desired amout of simultaneous processes being supported.
-\\Nonetheless, the observations resultet in no significant change.
-While the artificial delay, running 4x 10 request, accounts for 1600ms, the complete benchmark always endend between 1985ms and 2016ms.
-The benchmark was executed in different erlang shells, too.
+Several combinations running an erlang shell with 1,2 \& 4 cores support were done. This is achieved by executing the shell with \textit{-smp enabled +S N} where \textit{N} is the desired amout of simultaneous processes being supported.
+\\The observations made are clearly.
+\textit{Test2.erl} is made to do several runs at the same time while in the server the function \textit{handlers/2} creates several processes for for listening to incoming connections.
+Still, this didn't seem to make an impact, contrary to the influence of the amount of enabled multi processes given to the erlang shell.
+As long as the amount is in the range of the amount of logical cores present, there's a proportional effect.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+Amount of processes enabled           & Time [ms]  \\\hline
+1      &  2000\\\hline
+2      & 1000\\\hline
+4     & 500-550\\\hline
+\end{tabular}
+\caption{Relationship}
+\label{tab:relations}
+\end{table}
 
 \section{Conclusions}
 
