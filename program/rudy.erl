@@ -39,6 +39,8 @@ reply({{get, URI, _}, _, _}) ->
 
 start(Port) ->
     register(rudy, spawn(fun() -> init(Port) end)).
+    %register(rudy2, spawn(fun() -> init(Port) end)),
+    %register(rudy3, spawn(fun() -> init(Port) end)).
 
 stop() ->
     exit(whereis(rudy), "time to die").

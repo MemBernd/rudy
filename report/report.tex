@@ -1,5 +1,5 @@
 % Very simple template for lab reports. Most common packages are already included.
-% !TeX spellcheck = en_US 
+% !TeX spellcheck = en_US
 \documentclass[a4paper, 11pt]{article}
 \usepackage[utf8]{inputenc} % Change according your file encoding
 \usepackage{graphicx}
@@ -62,7 +62,7 @@ It's a virtualized datacenter, hence the incomplete description about their hard
     \item E: Rudy on server while test was executed on both clients simulatenously.
 \end{itemize}
 
-The following table results from doing 1000 request to the server.
+The following table results from doing 100 request to the server.
 An artificial delay of 40ms was introduced in a second run to simulate file handling.
 \begin{figure}[h]
   \begin{center}
@@ -73,10 +73,17 @@ An artificial delay of 40ms was introduced in a second run to simulate file hand
 \end{figure}
 
 
-This shows a clear impact of the artificial delay.
+This shows a clear impact of the artificial delay, since it's adds a constant 4s to the 100 requests.
 Scenario \textit{E} is special and has to be interpreted.
 In the case without an artificial delay, it's impact is \textless1\%, but sometimes more noticeable.
-Contrary to this, running the server with an artificial delay between request elevates the time it takes to complete by 50\%.
+Contrary to this, running the server with an artificial delay between request elevates the time it takes to complete by up to 50\%.
+
+\subsection{Multiprocessor tests}
+Several test were made on clientLocal (4 logical cores) using the files created in the assignment without modifications and the provided \textit{rudy4.erl} \& \textit{test2.erl}.
+Several combinations running an erlang shell with 1,2 \& 4 cores support were done. This is achieved by executing the shell with \textit{-smp enabled -S N} where \textit{N} is the desired amout of simultaneous processes being supported.
+\\Nonetheless, the observations resultet in no significant change.
+While the artificial delay, running 4x 10 request, accounts for 1600ms, the complete benchmark always endend between 1985ms and 2016ms.
+The benchmark was executed in different erlang shells, too.
 
 \section{Conclusions}
 

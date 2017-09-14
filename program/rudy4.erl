@@ -13,10 +13,10 @@ stop() ->
 
 init(Port, N) ->
     case gen_tcp:listen(Port, [list, {active, false}, {reuseaddr, true}]) of
-	{ok, Listen} -> 
+	{ok, Listen} ->
 	    handlers(Listen, N),
 	    super();
-	{error, Error} -> 
+	{error, Error} ->
 	    io:format("rudy: initialization failed: ~w~n", [Error]),
 	    error
     end.
@@ -35,14 +35,14 @@ handlers(Listen, N) ->
 	    spawn(fun() -> handler(Listen, N) end),
 	    handlers(Listen, N-1)
     end.
-			       
+
 
 
 handler(Listen, I) ->
     %%io:format("rudy: waiting for request~n", []),
     case gen_tcp:accept(Listen) of
  	{ok, Client} ->
-	    io:format("rudy ~w: received request~n", [I]),
+	    %io:format("rudy ~w: received request~n", [I]),
             request(Client),
 	    handler(Listen, I);
  	{error, Error} ->
@@ -67,21 +67,20 @@ request(Client) ->
 	    ok
     end.
 
-    
 
 
-reply({{get, URI, _}, _, _}) -> 
+
+reply({{get, URI, _}, _, _}) ->
     timer:sleep(40),
     %%fib(30),
     http:ok("<html><head><title>Rudy</title></head><body>This is a test.<br/>" ++ URI ++ "</body></html>").
 
 
-fib(N) ->    
+fib(N) ->
     if
 	N == 0 ->
 	    0;
-	N == 1 -> 
+	N == 1 ->
 	    1;
 	true -> fib(N-1) + fib(N-2)
     end.
-	    
